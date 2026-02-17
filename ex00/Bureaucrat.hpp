@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 11:53:32 by jocalder          #+#    #+#             */
-/*   Updated: 2026/02/16 12:47:26 by jocalder         ###   ########.fr       */
+/*   Updated: 2026/02/17 11:48:18 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+#include <string>
 
 class Bureaucrat
 {
@@ -33,18 +34,18 @@ class Bureaucrat
 		void		incrementGrade();
 		void		decrementGrade();
 
-		class GradeTooHighException : std::exception
+		class GradeTooHighException : public std::exception
 		{
 			public:
 				const char* what() const throw();
 		};
-		class GradeTooLowException : std::exception
+		class GradeTooLowException : public std::exception
 		{
 			public:
 				const char* what() const throw();
 		};
-		
-		std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
 };
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
 
 #endif
