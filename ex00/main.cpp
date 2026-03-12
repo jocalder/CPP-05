@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 11:16:44 by jocalder          #+#    #+#             */
-/*   Updated: 2026/02/17 12:04:18 by jocalder         ###   ########.fr       */
+/*   Updated: 2026/03/12 11:05:23 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,4 @@ int	main()
 	{
 		std::cerr << "Exception caught: " << e.what() << '\n';
 	}
-	
 }

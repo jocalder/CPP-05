@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 11:41:02 by jocalder          #+#    #+#             */
-/*   Updated: 2026/02/26 11:47:37 by jocalder         ###   ########.fr       */
+/*   Updated: 2026/03/12 11:23:38 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main()
 {
-	std::cout << "===== TEST 1: Creation OK =====" << std::endl;
+	std::cout << "TEST 1: Creation." << std::endl;
 	try
 	{
 		Bureaucrat a("Alice", 42);
@@ -30,7 +30,7 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "\n===== TEST 2: Invalid Bureaucrat Grade =====" << std::endl;
+	std::cout << "TEST 2: Invalid Bureaucrat Grade." << std::endl;
 	try
 	{
 		Bureaucrat bad("Bad", 0);
@@ -40,17 +40,17 @@ int main()
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n===== TEST 3: Invalid Form Grade =====" << std::endl;
+	std::cout << "TEST 3: Invalid Form Grade." << std::endl;
 	try
 	{
-		Form badForm("Illegal", 151, 10);
+		Form badForm("Ilegal Form", 151, 10);
 	}
 	catch (std::exception &e)
 	{
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n===== TEST 4: Successful Sign =====" << std::endl;
+	std::cout << "TEST 4: Successful Sign." << std::endl;
 	try
 	{
 		Bureaucrat boss("Boss", 1);
@@ -64,7 +64,7 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "\n===== TEST 5: Failed Sign =====" << std::endl;
+	std::cout << "TEST 5: Failed Sign." << std::endl;
 	try
 	{
 		Bureaucrat intern("Intern", 150);
@@ -78,11 +78,11 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "\n===== TEST 6: Increment / Decrement Limits =====" << std::endl;
+	std::cout << "TEST 6: Increment / Decrement Limits." << std::endl;
 	try
 	{
 		Bureaucrat top("Top", 1);
-		top.incrementGrade(); // should throw
+		top.incrementGrade();
 	}
 	catch (std::exception &e)
 	{
@@ -92,23 +92,23 @@ int main()
 	try
 	{
 		Bureaucrat low("Low", 150);
-		low.decrementGrade(); // should throw
+		low.decrementGrade();
 	}
 	catch (std::exception &e)
 	{
 		std::cout << "Decrement error: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n===== TEST 7: Copy and Assignment =====" << std::endl;
+	std::cout << "TEST 7: Copy and Assignment." << std::endl;
 	try
 	{
 		Bureaucrat a("Original", 20);
-		Bureaucrat b = a; // copy constructor
+		Bureaucrat b = a;
 
 		std::cout << b << std::endl;
 
-		Bureaucrat c("Other", 100);
-		c = a; // assignment
+		Bureaucrat c("Other copy", 100);
+		c = a;
 
 		std::cout << c << std::endl;
 	}
@@ -116,8 +116,5 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-
-	std::cout << "\n===== END OF TESTS =====" << std::endl;
-
 	return 0;
 }

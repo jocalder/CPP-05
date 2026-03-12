@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/05 11:17:52 by jocalder          #+#    #+#             */
-/*   Updated: 2026/03/12 12:05:01 by jocalder         ###   ########.fr       */
+/*   Created: 2026/03/04 12:53:00 by jocalder          #+#    #+#             */
+/*   Updated: 2026/03/12 12:00:53 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-#define INTERN_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
-#include <iostream>
-#include <string>
 #include "AForm.hpp"
 
-class AForm;
-
-class Intern
+class PresidentialPardonForm : public AForm
 {
 	private:
-		AForm*	createShrubbery(const std::string& target);
-		AForm*	createRobotomy(const std::string& target);
-		AForm*	createPresidential(const std::string& target);
+		std::string		_target;
 	public:
-		Intern();
-		Intern(const Intern& other);
-		Intern&	operator=(const Intern& other);
-		~Intern();
+		PresidentialPardonForm();
+		PresidentialPardonForm(const std::string &target);
+		PresidentialPardonForm(const PresidentialPardonForm& other);
+		PresidentialPardonForm&	operator=(const PresidentialPardonForm& other);
+		~PresidentialPardonForm();
 
-		AForm*	makeForm(const std::string& name, const std::string& target);
+		void	executeAction() const;
 };
 
 #endif

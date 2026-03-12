@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/05 11:17:52 by jocalder          #+#    #+#             */
-/*   Updated: 2026/03/12 12:05:01 by jocalder         ###   ########.fr       */
+/*   Created: 2026/03/04 12:28:38 by jocalder          #+#    #+#             */
+/*   Updated: 2026/03/12 11:59:59 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-#define INTERN_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
-#include <iostream>
-#include <string>
 #include "AForm.hpp"
+#include <cstdlib>
+#include <ctime>
 
-class AForm;
-
-class Intern
+class RobotomyRequestForm : public AForm
 {
 	private:
-		AForm*	createShrubbery(const std::string& target);
-		AForm*	createRobotomy(const std::string& target);
-		AForm*	createPresidential(const std::string& target);
+		std::string		_target;
 	public:
-		Intern();
-		Intern(const Intern& other);
-		Intern&	operator=(const Intern& other);
-		~Intern();
-
-		AForm*	makeForm(const std::string& name, const std::string& target);
+		RobotomyRequestForm();
+		RobotomyRequestForm(const std::string &target);
+		RobotomyRequestForm(const RobotomyRequestForm& other);
+		RobotomyRequestForm&	operator=(const RobotomyRequestForm& other);
+		~RobotomyRequestForm();
+		
+		void	executeAction() const;
 };
 
 #endif

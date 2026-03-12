@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/16 11:53:32 by jocalder          #+#    #+#             */
-/*   Updated: 2026/03/12 11:04:37 by jocalder         ###   ########.fr       */
+/*   Created: 2026/03/03 10:50:58 by jocalder          #+#    #+#             */
+/*   Updated: 2026/03/03 10:56:02 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <string>
+
+class	AForm;
 
 class Bureaucrat
 {
@@ -34,6 +36,10 @@ class Bureaucrat
 		void		incrementGrade();
 		void		decrementGrade();
 
+		void		signForm(AForm& form);
+		void		executeForm(AForm const & form) const;
+
+
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -46,6 +52,6 @@ class Bureaucrat
 		};
 };
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& b);
 
 #endif

@@ -4,7 +4,9 @@ CXX		=	c++
 
 FlAGS	=	-Wall -Werror -Wextra -std=c++98
 
-SRCS	=	main.cpp
+SRCS	=	Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp PresidentialPardonForm.cpp	\
+			Intern.cpp main.cpp \
 
 OBJS	=	$(SRCS:.cpp=.o)
 
@@ -19,7 +21,7 @@ $(NAME): $(OBJS)
 clean:
 	rm -f $(OBJS)
 
-fclean:
+fclean: clean
 	rm -f $(NAME)
 
 re: fclean all

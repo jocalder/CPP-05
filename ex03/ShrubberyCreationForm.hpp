@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/05 11:17:52 by jocalder          #+#    #+#             */
-/*   Updated: 2026/03/12 12:05:01 by jocalder         ###   ########.fr       */
+/*   Created: 2026/03/03 11:18:26 by jocalder          #+#    #+#             */
+/*   Updated: 2026/03/12 11:59:13 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-#define INTERN_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
 
-#include <iostream>
-#include <string>
 #include "AForm.hpp"
+#include <fstream>
 
-class AForm;
-
-class Intern
+class	ShrubberyCreationForm : public AForm
 {
 	private:
-		AForm*	createShrubbery(const std::string& target);
-		AForm*	createRobotomy(const std::string& target);
-		AForm*	createPresidential(const std::string& target);
+		std::string		_target;
 	public:
-		Intern();
-		Intern(const Intern& other);
-		Intern&	operator=(const Intern& other);
-		~Intern();
-
-		AForm*	makeForm(const std::string& name, const std::string& target);
+		ShrubberyCreationForm();
+		ShrubberyCreationForm(const std::string &target);
+		ShrubberyCreationForm(const ShrubberyCreationForm& other);
+		ShrubberyCreationForm&	operator=(const ShrubberyCreationForm& other);
+		~ShrubberyCreationForm();
+		
+		void	executeAction() const;
 };
 
 #endif
